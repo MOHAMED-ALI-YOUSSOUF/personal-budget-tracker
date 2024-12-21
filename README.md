@@ -29,11 +29,11 @@ Personal Budget Tracker is a web application designed to help users track their 
 _The dashboard displays the total balance, income, and expenses summary._
 _Interactive charts provide a clear view of your financial trends._
 
-### Add Transaction Page
+### Add Transaction 
 
 ![Add Transaction Screenshot](./screenshots/add-transaction.png)
 
-_Users can add income or expense transactions with details like amount, date, and category._
+_Users can add income or expense transactions with details like amount, description, date, and category._
 
 ### Categories
 
