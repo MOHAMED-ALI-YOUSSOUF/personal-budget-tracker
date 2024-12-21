@@ -1,6 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Personal Budget Tracker
 
-## Getting Started
+Personal Budget Tracker is a web application designed to help users track their income, expenses, and overall financial health. It allows users to categorize transactions, view detailed insights, and manage their budget effectively.
+![Dashboard Screenshot](./screenshots/dashboard-light.png)
+
+## Features
+
+- Add and delete transactions (income or expense).
+- Categorize transactions (e.g., food, rent, entertainment).
+- View transactions sorted by date.
+- Display total income, expenses, and balance.
+- Responsive design for mobile and desktop.
+
+## Tech Stack
+
+- **Frontend:** Next.js, Tailwind CSS, Date-fns
+- **Icons:** Lucide-react
+- **State Management:** Context API
+- **Data Storage:** Local Storage
+- **Data Visualization:** Recharts
+
+## Screenshots
+
+### Dashboard
+
+![Dashboard Screenshot](./screenshots/dashboard-dark.png)
+![Dashboard Screenshot](./screenshots/dashboard-light.png)
+
+_The dashboard displays the total balance, income, and expenses summary._
+_Interactive charts provide a clear view of your financial trends._
+
+### Add Transaction Page
+
+![Add Transaction Screenshot](./screenshots/add-transaction.png)
+
+_Users can add income or expense transactions with details like amount, date, and category._
+
+### Categories
+
+![Categories Screenshot](./screenshots/categories.png)
+
+_Users can view, add, or manage their categories, such as income and expense types._  
+_Additionally, users can set a spending limit for each category to manage their budget effectively._
+
+### Transaction
+
+![Transaction Screenshot](./screenshots/transaction.png)
+
+_The transaction list displays all user transactions with details like date, type, description, category, and amount._  
+_Users can delete specific transactions if needed._
+
+## How to Run the Project
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/MOHAMED-ALI-YOUSSOUF/personal-budget-tracker.git
+
+   ```
+
+2. Navigate to the project folder:
+   ```bash
+   cd personal-budget-tracker
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Getting Started
 
 First, run the development server:
 
@@ -14,23 +80,12 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open your browser and navigate to: http://localhost:3000
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Live Demo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Check out the live demo [here](https://personal-budget-tracker-bay.vercel.app/).
 
-## Learn More
+## Contact
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Created by [Mohamed Ali Youssouf](https://mohamed-ali-youssouf.com) - Feel free to reach out!
