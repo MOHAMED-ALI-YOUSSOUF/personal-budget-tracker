@@ -1,6 +1,7 @@
 # Personal Budget Tracker
 
 Personal Budget Tracker is a web application designed to help users track their income, expenses, and overall financial health. It allows users to categorize transactions, view detailed insights, and manage their budget effectively.
+![Dashboard Screenshot](./screenshots/dashboard-light.png)
 
 ## Features
 
