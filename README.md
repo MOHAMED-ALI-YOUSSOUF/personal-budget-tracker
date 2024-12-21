@@ -44,7 +44,7 @@ _Additionally, users can set a spending limit for each category to manage their 
 
 ### Transaction
 
-![Transaction Screenshot](./screenshots/transaction.png)
+![Transaction Screenshot](./screenshots/transactions.png)
 
 _The transaction list displays all user transactions with details like date, type, description, category, and amount._  
 _Users can delete specific transactions if needed._
