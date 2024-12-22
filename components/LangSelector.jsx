@@ -1,8 +1,8 @@
 'use client';
 import React, { useEffect, useState } from "react";
-import "../i18n"; // Import de la configuration de traduction
+import "../i18n"; 
 import { useTranslation } from "react-i18next";
-import 'flag-icons/css/flag-icons.min.css'; // Import de la bibliothèque des drapeaux
+import 'flag-icons/css/flag-icons.min.css'; 
 import {
   Select,
   SelectContent,
@@ -17,13 +17,13 @@ const languages = [
     code: "en",
     lang: "English",
     flag: "🇺🇸",
-    country: "us", // Code pays pour le drapeau
+    country: "us", // country Code for The flag 
   },
   {
     code: "tr",
     lang: "Türkçe",
     flag: "🇹🇷",
-    country: "tr", // Code pays pour le drapeau
+    country: "tr",
   },
 ];
 
@@ -36,7 +36,7 @@ const LangSelector = () => {
     return i18n.language; // Fallback pour le serveur
   });
 
-  // Appliquer la langue stockée dans localStorage lors du premier rendu
+  // Apply language stored in localStorage on first render
   useEffect(() => {
     const storedLang = localStorage.getItem("lang") || i18n.language;
     if (storedLang !== i18n.language) {

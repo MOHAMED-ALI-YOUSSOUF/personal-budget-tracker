@@ -2,11 +2,11 @@ import { jsPDF } from "jspdf";
 import { format } from "date-fns";
 import { Button } from "./ui/button";
 import { useBudget } from "@/contexts/BudgetContext";
-import { useTranslation } from "react-i18next"; // Import de i18next pour les traductions
+import { useTranslation } from "react-i18next"; 
+
 
 // Fonction pour générer le PDF
-// Fonction pour générer le PDF
-export function generatePDF(transactions, categories, t) {
+export async function generatePDF(transactions, categories, t) {
     const doc = new jsPDF();
   
     // Titre du rapport

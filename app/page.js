@@ -1,10 +1,11 @@
-import { BudgetProvider } from "@/contexts/BudgetContext";
-import Dashboard from "@/components/Dashboard";
+import { Overview } from "@/components/Overview";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <BudgetProvider>
-      <Dashboard />
-    </BudgetProvider>
+    <div className=" mx-8">
+      <Overview />
+      <Footer />
+    </div>
   );
 }

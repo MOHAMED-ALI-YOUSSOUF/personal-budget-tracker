@@ -7,11 +7,11 @@ import { formatCurrency } from '@/lib/utils';
 import { MonthlyChart } from '@/components/charts/MonthlyChart';
 import { CategoryChart } from '@/components/charts/CategoryChart';
 import { SavingsSuggestions } from './SavingsSuggestions';
-import { useTranslation } from 'react-i18next'; // Importation du hook
+import { useTranslation } from 'react-i18next'; 
 
 export function Overview() {
   const { transactions, categories } = useBudget();
-  const { t } = useTranslation(); // Utilisation du hook
+  const { t } = useTranslation(); 
 
   const totals = useMemo(() => {
     const income = transactions
