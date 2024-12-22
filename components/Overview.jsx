@@ -6,9 +6,12 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { formatCurrency } from '@/lib/utils';
 import { MonthlyChart } from '@/components/charts/MonthlyChart';
 import { CategoryChart } from '@/components/charts/CategoryChart';
+import { SavingsSuggestions } from './SavingsSuggestions';
+import { useTranslation } from 'react-i18next'; // Importation du hook
 
 export function Overview() {
   const { transactions, categories } = useBudget();
+  const { t } = useTranslation(); // Utilisation du hook
 
   const totals = useMemo(() => {
     const income = transactions
@@ -31,7 +34,7 @@ export function Overview() {
       <div className="grid gap-4 md:grid-cols-3">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Income</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('overview.totalIncome')}</CardTitle> 
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-600">
@@ -41,7 +44,7 @@ export function Overview() {
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Expenses</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('overview.totalExpenses')}</CardTitle> 
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-red-600">
@@ -51,7 +54,7 @@ export function Overview() {
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Balance</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('overview.balance')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${totals.balance >= 0 ? 'text-green-600' : 'text-red-600'}`}>
@@ -64,7 +67,7 @@ export function Overview() {
       <div className="grid gap-4 md:grid-cols-2">
         <Card>
           <CardHeader>
-            <CardTitle>Monthly Overview</CardTitle>
+            <CardTitle>{t('overview.monthlyOverview')}</CardTitle> 
           </CardHeader>
           <CardContent>
             <MonthlyChart />
@@ -72,13 +75,14 @@ export function Overview() {
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>Expenses by Category</CardTitle>
+            <CardTitle>{t('overview.expensesByCategory')}</CardTitle> 
           </CardHeader>
           <CardContent>
             <CategoryChart />
           </CardContent>
         </Card>
       </div>
+      <SavingsSuggestions />
     </div>
   );
 }

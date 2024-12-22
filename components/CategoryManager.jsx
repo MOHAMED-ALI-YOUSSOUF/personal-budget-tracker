@@ -8,10 +8,12 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent } from '@/components/ui/card';
 import { Trash2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useTranslation } from 'react-i18next';
 
 export function CategoryManager() {
   const { categories, addCategory, updateBudgetLimit, deleteCategory } = useBudget();
   const [newCategoryName, setNewCategoryName] = useState('');
+   const { t } = useTranslation();
 
   const handleAddCategory = (e) => {
     e.preventDefault();
@@ -31,10 +33,10 @@ export function CategoryManager() {
           <Input
             value={newCategoryName}
             onChange={(e) => setNewCategoryName(e.target.value)}
-            placeholder="New category name"
+            placeholder={t('additional.newCategoryName')}
           />
         </div>
-        <Button type="submit">Add Category</Button>
+        <Button type="submit">{t('additional.addCategory')}</Button>
       </form>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -53,13 +55,13 @@ export function CategoryManager() {
                   </Button>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor={`budget-${category.id}`}>Budget Limit</Label>
+                  <Label htmlFor={`budget-${category.id}`}>{t('additional.budgetLimit')}</Label>
                   <Input
                     id={`budget-${category.id}`}
                     type="number"
                     value={category.budgetLimit || ''}
                     onChange={(e) => updateBudgetLimit(category.id, parseFloat(e.target.value))}
-                    placeholder="Set limit"
+                    placeholder={t('additional.setLimit')}
                   />
                 </div>
                 <div

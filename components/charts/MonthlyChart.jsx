@@ -4,9 +4,11 @@ import { useMemo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { useBudget } from '@/contexts/BudgetContext';
 import { startOfMonth, endOfMonth, eachDayOfInterval, format } from 'date-fns';
+import { useTranslation } from 'react-i18next';
 
 export function MonthlyChart() {
   const { transactions } = useBudget();
+   const { t } = useTranslation();
 
   const data = useMemo(() => {
     const now = new Date();
@@ -44,8 +46,8 @@ export function MonthlyChart() {
           <XAxis dataKey="date" />
           <YAxis />
           <Tooltip />
-          <Bar dataKey="income" fill="hsl(var(--chart-1))" name="Income" />
-          <Bar dataKey="expenses" fill="hsl(var(--chart-2))" name="Expenses" />
+          <Bar dataKey="income" fill="hsl(var(--chart-1))" name={t('additional.income')} />
+          <Bar dataKey="expenses" fill="hsl(var(--chart-2))" name={t('additional.expenses')} />
         </BarChart>
       </ResponsiveContainer>
     </div>

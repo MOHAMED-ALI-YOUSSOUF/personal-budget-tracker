@@ -1,0 +1,70 @@
+{
+  "overview": {
+    "title": "Personal Budget Tracker",
+    "totalIncome": "Total Income",
+    "totalExpenses": "Total Expenses",
+    "balance": "Balance",
+    "monthlyOverview": "Monthly Overview",
+    "expensesByCategory": "Expenses by Category",
+    "savingsSuggestions": "Savings Suggestions",
+    "keepItUp": "Keep it up! Your spending habits seem well balanced.",
+    "unknownCategory": "Unknown",
+    "noExpenseData": "No expense data available"
+  },
+  "categories": {
+    "housing": "Housing",
+    "transportation": "Transportation",
+    "food": "Food",
+    "utilities": "Utilities",
+    "entertainment": "Entertainment",
+    "salary": "Salary",
+    "freelance": "Freelance",
+    "investments": "Investments",
+    "other": "Other"
+  },
+  "transactions": {
+    "title": "Recent Transactions",
+    "type": "Type",
+    "description": "Description",
+    "enterDescription": "Enter description",
+    "category": "Category",
+    "amount": "Amount",
+    "date": "Date",
+    "pickDate": "Tarih seçin",
+    "income": "Income",
+    "expense": "Expense",
+    "noTransactions": "No transactions yet",
+    "addTransaction": "Add Transaction",
+    "selectCategory": "Select category",
+    "transactionDetails": "Transaction Details"
+  },
+  "suggestions": {
+    "highSpending": "Your spending in {category} is 20% above average. Try to reduce spending by {amount}.",
+    "unusualTransaction": "Unusual transaction of {amount} in {category}. Check if this expense was necessary.",
+    "foodTip": "Prepare meals in advance and make a shopping list to reduce food expenses.",
+    "entertainmentTip": "Look for free or discounted activities in your area.",
+    "transportationTip": "Consider carpooling or public transport to reduce transportation costs."
+  },
+  "additional": {
+    "income": "Income",
+    "expenses": "Expenses",
+    "personalBudgetTracker": "Personal Budget Tracker",
+    "overview": "Overview",
+    "transactions": "Transactions",
+    "categories": "Categories",
+    "categoryManagement": "Category Management",
+    "recentTransactions": "Recent Transactions",
+    "addCategory": "Add Category",
+    "newCategoryName": "New category name",
+    "budgetLimit": "Budget Limit",
+    "setLimit": "Set limit",
+    "transactionReport": "Transaction Report",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "deleteCategory": "Delete Category",
+    "downloadButton": "Download PDF Report",
+    "description": "Description",
+    "reduceSpending": "Reduce your spending in {{categoryName}}, it is above your usual average."
+  }
+}

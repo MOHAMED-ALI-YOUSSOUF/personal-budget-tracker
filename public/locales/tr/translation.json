@@ -1,0 +1,72 @@
+{
+  "overview": {
+    "title": "Kişisel Bütçe Takipçisi",
+    "totalIncome": "Toplam Gelir",
+    "totalExpenses": "Toplam Gider",
+    "balance": "Bakiye",
+    "monthlyOverview": "Aylık Genel Bakış",
+    "expensesByCategory": "Kategoriye Göre Giderler",
+    "savingsSuggestions": "Tasarruf Önerileri",
+    "keepItUp": "Böyle devam et! Harcama alışkanlıkların dengeli görünüyor.",
+    "unknownCategory": "Bilinmeyen",
+    "noExpenseData": "Henüz harcama verisi yok"
+  },
+  "categories": {
+    "housing": "Konut",
+    "transportation": "Ulaşım",
+    "food": "Gıda",
+    "utilities": "Faturalar",
+    "entertainment": "Eğlence",
+    "salary": "Maaş",
+    "freelance": "Serbest Çalışma",
+    "investments": "Yatırımlar",
+    "other": "Diğer"
+  },
+  "transactions": {
+    "title": "Son İşlemler",
+    "type": "Tür",
+    "description": "Açıklama",
+    "enterDescription": "Açıklama girin",
+    "category": "Kategori",
+    "amount": "Tutar",
+    "date": "Tarih",
+    "pickDate": "Tarih seçin",
+    "income": "Gelir",
+    "expense": "Gider",
+    "noTransactions": "Henüz işlem yok",
+    "addTransaction": "İşlem Ekle",
+    "selectCategory": "Kategori seç",
+    "transactionDetails": "Islem Detaylari"
+  },
+  "suggestions": {
+    "highSpending": "{category} kategorisindeki harcamanız ortalamanın %20 üzerinde. Harcamayı {amount} azaltmaya çalışın.",
+    "unusualTransaction": "{category} kategorisinde {amount} tutarında olağandışı işlem. Bu harcamanın gerekli olup olmadığını kontrol edin.",
+    "foodTip": "Yemek masraflarını azaltmak için önceden yemek hazırlayın ve alışveriş listesi yapın.",
+    "entertainmentTip": "Bölgenizdeki ücretsiz veya indirimli aktiviteleri araştırın.",
+    "transportationTip": "Ulaşım masraflarını azaltmak için toplu taşıma veya araç paylaşımını düşünün."
+  },
+  "additional": {
+    "income": "Gelir",
+    "expenses": "Gider",
+    "personalBudgetTracker": "Kişisel Bütçe Takipçisi",
+    "overview": "Genel Bakış",
+    "transactions": "İşlemler",
+    "categories": "Kategoriler",
+    "categoryManagement": "Kategori Yönetimi",
+    "recentTransactions": "Son İşlemler",
+    "addCategory": "Kategori Ekle",
+    "newCategoryName": "Yeni kategori adı",
+    "budgetLimit": "Bütçe Limiti",
+    "setLimit": "Limit Belirle",
+    "transactionReport": "İşlem Raporu",
+    "light": "Aydınlık",
+    "dark": "Karanlık",
+    "system": "Sistem",
+    "deleteCategory": "Kategoriyi Sil",
+    "reportTitle":"Finansal Islemler Raporu",
+    "downloadButton": "PDF Raporunu İndir",
+    "description": "Açiklama",
+    "reduceSpending":"{{categoryName}} kategorisinde harcamalarınızı azaltın, bu, ortalamanızın üzerinde."
+
+  }
+}

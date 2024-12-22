@@ -6,9 +6,11 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Button } from '@/components/ui/button';
 import { Trash2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useTranslation } from 'react-i18next';
 
 export function TransactionList() {
   const { transactions, categories, deleteTransaction } = useBudget();
+  const { t } = useTranslation();
 
   const getCategoryName = (categoryId) => {
     return categories.find(c => c.id === categoryId)?.name || 'Unknown';
@@ -23,11 +25,11 @@ export function TransactionList() {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Date</TableHead>
-            <TableHead>Type</TableHead>
-            <TableHead>Description</TableHead>
-            <TableHead>Category</TableHead>
-            <TableHead className="text-right">Amount</TableHead>
+            <TableHead>{t('transactions.date')}</TableHead>
+            <TableHead>{t('transactions.type')}</TableHead>
+            <TableHead>{t('transactions.description')}</TableHead>
+            <TableHead>{t('transactions.category')}</TableHead>
+            <TableHead className="text-right">{t('transactions.amount')}</TableHead>
             <TableHead></TableHead>
           </TableRow>
         </TableHeader>
@@ -58,7 +60,7 @@ export function TransactionList() {
           {transactions.length === 0 && (
             <TableRow>
               <TableCell colSpan={6} className="text-center text-muted-foreground">
-                No transactions yet
+                 {t('transactions.noTransactions')}
               </TableCell>
             </TableRow>
           )}

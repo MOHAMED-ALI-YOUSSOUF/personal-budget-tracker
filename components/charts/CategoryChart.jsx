@@ -3,9 +3,11 @@
 import { useMemo } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
 import { useBudget } from '@/contexts/BudgetContext';
+import { useTranslation } from 'react-i18next';
 
 export function CategoryChart() {
   const { transactions, categories } = useBudget();
+     const { t } = useTranslation();
 
   const data = useMemo(() => {
     const expensesByCategory = transactions
@@ -33,7 +35,7 @@ export function CategoryChart() {
   if (data.length === 0) {
     return (
       <div className="h-[300px] flex items-center justify-center text-muted-foreground">
-        No expense data available
+         {t('overview.noExpenseData')}
       </div>
     );
   }
