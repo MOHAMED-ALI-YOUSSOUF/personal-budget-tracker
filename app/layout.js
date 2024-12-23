@@ -16,15 +16,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <BudgetProvider>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="flex flex-col ">
-              <Dashboard />
-              {children}
-            </div>
-            <Toaster />
-          </ThemeProvider>
-        </BudgetProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );
