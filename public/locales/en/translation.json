@@ -38,19 +38,10 @@
     "selectCategory": "Select category",
     "transactionDetails": "Transaction Details"
   },
-  "suggestions": {
-    "highSpending": "Your spending in {category} is 20% above average. Try to reduce spending by {amount}.",
-    "unusualTransaction": "Unusual transaction of {amount} in {category}. Check if this expense was necessary.",
-    "foodTip": "Prepare meals in advance and make a shopping list to reduce food expenses.",
-    "entertainmentTip": "Look for free or discounted activities in your area.",
-    "transportationTip": "Consider carpooling or public transport to reduce transportation costs."
-  },
   "additional": {
     "income": "Income",
     "expenses": "Expenses",
-    "personalBudgetTracker": "Personal Budget Tracker",
     "overview": "Overview",
-    "transactions": "Transactions",
     "categories": "Categories",
     "categoryManagement": "Category Management",
     "recentTransactions": "Recent Transactions",
@@ -64,7 +55,6 @@
     "system": "System",
     "deleteCategory": "Delete Category",
     "downloadButton": "Download PDF Report",
-    "description": "Description",
     "reduceSpending": "Reduce your spending in {{categoryName}}, it is above your usual average."
   }
 }
