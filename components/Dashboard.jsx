@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Overview } from '@/components/Overview';
@@ -10,11 +10,41 @@ import { AddTransaction } from '@/components/AddTransaction';
 import { ModeToggle } from '@/components/mode-toggle';
 import { TransactionReportButton } from './TransactionReportButton';
 import { useTranslation } from 'react-i18next';
-import LangSelector from './LangSelector';
+import dynamic from "next/dynamic";
+
+const LangSelector = dynamic(() => import("@/components/LangSelector"), {
+  ssr: false, // Désactive SSR
+});
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('overview');
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const [isTranslationReady, setTranslationReady] = useState(false);
+
+  useEffect(() => {
+    // Vérifie si i18n est prêt
+    const checkTranslation = () => {
+      if (i18n.isInitialized) {
+        setTranslationReady(true);
+      }
+    };
+
+    // On vérifie au chargement du composant si les traductions sont prêtes
+    checkTranslation();
+
+    // Si la traduction n'est pas encore prête, on met en place un écouteur
+    i18n.on('languageChanged', checkTranslation);
+
+    return () => {
+      i18n.off('languageChanged', checkTranslation); // Nettoyage
+    };
+  }, [i18n]);
+
+  if (!isTranslationReady) {
+    return (
+      <div>Loading translations...</div> // Message pendant le chargement
+    );
+  }
 
   return (
     <div className="flex min-h-screen flex-col">

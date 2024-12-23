@@ -60,7 +60,6 @@ const LangSelector = () => {
 
   return (
     <div className="flex justify-center items-center gap-4 mt-2">
-
       <Select value={selectedLang} onValueChange={handleChangeLanguage}>
         <SelectTrigger className="w-[130px]">
           <SelectValue placeholder="Select Language" />
