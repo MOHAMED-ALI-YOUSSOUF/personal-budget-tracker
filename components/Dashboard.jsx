@@ -6,7 +6,7 @@ import { ModeToggle } from '@/components/mode-toggle';
 import { TransactionReportButton } from './TransactionReportButton';
 import { AddTransaction } from '@/components/AddTransaction';
 import { useTranslation } from 'react-i18next';
-import LangSelector from './LangSelector';
+// import LangSelector from './LangSelector';
 
 export default function Dashboard() {
   const pathname = usePathname();
@@ -21,7 +21,7 @@ export default function Dashboard() {
         </h2>
           <div className="ml-auto flex items-center space-x-4">
             
-            <LangSelector />
+            {/* <LangSelector /> */}
             <ModeToggle />
           </div>
         </div>
