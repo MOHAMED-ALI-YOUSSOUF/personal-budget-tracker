@@ -10,11 +10,8 @@ import { AddTransaction } from '@/components/AddTransaction';
 import { ModeToggle } from '@/components/mode-toggle';
 import { TransactionReportButton } from './TransactionReportButton';
 import { useTranslation } from 'react-i18next';
-import dynamic from "next/dynamic";
+import LangSelector from './LangSelector';
 
-const LangSelector = dynamic(() => import("@/components/LangSelector"), {
-  ssr: false, 
-});
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('overview');
   const { t } = useTranslation();
