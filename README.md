@@ -14,8 +14,7 @@ Personal Budget Tracker is a web application designed to help users track their 
 - Real-time chart updates for visualizing income and expense trends.
 - Dark Mode and Light Mode toggle for user preference.
 - Multi-device sync using Local Storage for seamless usage.
-- Multi-language support for English and Turkish (EN-TR).
-- Download PDF report of income, expenses, and savings.
+- Download PDF report of income, expenses, balance and details of transactions.
 - Savings suggestions based on spending patterns.
 
 ## Tech Stack
@@ -27,7 +26,6 @@ Personal Budget Tracker is a web application designed to help users track their 
 - **Data Visualization:** Recharts
 - **Chart Libraries:** Recharts (for visualizing income, expenses, and balances)
 - **Theme:** Tailwind CSS for responsive and customizable design, supporting both dark and light modes.
-- **Internationalization:** i18next for multi-language support (English and Turkish).
 - **PDF Generation:** jsPDF for downloading PDF reports.
 - **Savings Calculation:** Custom logic based on user spending behavior to suggest potential savings.
 
@@ -41,9 +39,8 @@ Personal Budget Tracker is a web application designed to help users track their 
 _The dashboard displays the total balance, income, and expenses summary._
 _Interactive charts provide a clear view of your financial trends._
 _Users can toggle between Dark Mode and Light Mode._
-_Support for both English and Turkish languages is available._
 
-### Add Transaction 
+### Add Transaction
 
 ![Add Transaction Screenshot](./screenshots/add-transaction.png)
 
@@ -65,14 +62,7 @@ _Users can delete specific transactions if needed._
 
 ### Download PDF Report
 
-Users can download a PDF report of their income, expenses, and savings.
-This report can be customized based on date range and categories, and it is available in both English and Turkish.
-
-### Savings Suggestions
-
-The savings suggestions feature provides insights on how users can save more based on their spending behavior.
-Suggestions are made by analyzing the user's current spending and providing alternatives to reduce unnecessary expenses.
-Users can view savings tips, such as setting limits on specific categories or adjusting their monthly budget.
+Users can download a PDF report of their income, expenses, balance and details of transactions.
 
 ## How to Run the Project
 

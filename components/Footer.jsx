@@ -14,8 +14,8 @@ const Footer = () => {
         >
           Mohamed Ali Youssouf
         </a>
-        <br /> All Rights Reserved
-        {/* <br /> {t("additional.AllRightsReserved")} */}
+        <br /> Tüm hakkı saklıdır
+        
       </span>
     </footer>
   );

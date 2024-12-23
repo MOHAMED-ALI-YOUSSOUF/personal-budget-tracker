@@ -12,7 +12,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar as CalendarComponent } from '@/components/ui/calendar';
 import { cn } from '@/lib/utils';
-import { useTranslation } from 'react-i18next';
 
 export function TransactionForm({ onSuccess }) {
   const { categories, addTransaction } = useBudget();
@@ -21,7 +20,6 @@ export function TransactionForm({ onSuccess }) {
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [date, setDate] = useState(new Date());
-   const { t } = useTranslation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,17 +46,17 @@ export function TransactionForm({ onSuccess }) {
     <form onSubmit={handleSubmit} className="space-y-4">
       <RadioGroup value={type} onValueChange={(value) => setType(value)} className="flex space-x-4">
         <div className="flex items-center space-x-2">
-          <RadioGroupItem value="expense" id="expense" aria-label={t('transactions.expense')}/>
-          <Label htmlFor="expense">{t('transactions.expense')}</Label> 
+          <RadioGroupItem value="expense" id="expense" aria-label="expense"/>
+          <Label htmlFor="expense">Gider</Label> 
         </div>
         <div className="flex items-center space-x-2">
           <RadioGroupItem value="income" id="income" />
-          <Label htmlFor="income">{t('transactions.income')}</Label> 
+          <Label htmlFor="income">Gelir</Label> 
         </div>
       </RadioGroup>
 
       <div className="space-y-2">
-        <Label htmlFor="amount">{t('transactions.amount')}</Label>
+        <Label htmlFor="amount">Tutar</Label>
         <Input
           id="amount"
           type="number"
@@ -71,21 +69,21 @@ export function TransactionForm({ onSuccess }) {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="description">{t('transactions.description')}</Label>
+        <Label htmlFor="description">Açıklama</Label>
         <Input
           id="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          placeholder={t('transactions.enterDescription')}
+          placeholder="Açıklama girin"
           required
         />
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="category">{t('transactions.category')}</Label>
+        <Label htmlFor="category">Kategori</Label>
         <Select value={category} onValueChange={setCategory} required>
           <SelectTrigger>
-            <SelectValue placeholder={t('transactions.selectCategory')}/>
+            <SelectValue placeholder="Kategori seç"/>
           </SelectTrigger>
           <SelectContent>
             {relevantCategories.map((cat) => (
@@ -98,7 +96,7 @@ export function TransactionForm({ onSuccess }) {
       </div>
 
       <div className="space-y-2">
-        <Label>{t('transactions.date')}</Label>
+        <Label>Tarih</Label>
         <Popover>
           <PopoverTrigger asChild>
             <Button
@@ -109,7 +107,7 @@ export function TransactionForm({ onSuccess }) {
               )}
             >
               <Calendar className="mr-2 h-4 w-4" />
-              {date ? format(date, 'PPP') : <span>{t('transactions.pickDate')}</span>}
+              {date ? format(date, 'PPP') : <span>Tarih seçin</span>}
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0">
@@ -123,7 +121,7 @@ export function TransactionForm({ onSuccess }) {
         </Popover>
       </div>
 
-      <Button type="submit" className="w-full">{t('transactions.addTransaction')}</Button>
+      <Button type="submit" className="w-full">İşlem Ekle</Button>
     </form>
   );
 }

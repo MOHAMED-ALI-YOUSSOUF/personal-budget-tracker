@@ -7,11 +7,9 @@ import { formatCurrency } from '@/lib/utils';
 import { MonthlyChart } from '@/components/charts/MonthlyChart';
 import { CategoryChart } from '@/components/charts/CategoryChart';
 import { SavingsSuggestions } from './SavingsSuggestions';
-import { useTranslation } from 'react-i18next'; 
 
 export function Overview() {
   const { transactions, categories } = useBudget();
-  const { t } = useTranslation(); 
 
   const totals = useMemo(() => {
     const income = transactions
@@ -34,7 +32,7 @@ export function Overview() {
       <div className="grid gap-4 md:grid-cols-3">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('overview.totalIncome')}</CardTitle> 
+            <CardTitle className="text-sm font-medium">Toplam Gelir</CardTitle> 
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-600">
@@ -44,7 +42,7 @@ export function Overview() {
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('overview.totalExpenses')}</CardTitle> 
+            <CardTitle className="text-sm font-medium">Toplam Gider</CardTitle> 
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-red-600">
@@ -54,7 +52,7 @@ export function Overview() {
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('overview.balance')}</CardTitle>
+            <CardTitle className="text-sm font-medium">Bakiye</CardTitle>
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${totals.balance >= 0 ? 'text-green-600' : 'text-red-600'}`}>
@@ -67,7 +65,7 @@ export function Overview() {
       <div className="grid gap-4 md:grid-cols-2">
         <Card>
           <CardHeader>
-            <CardTitle>{t('overview.monthlyOverview')}</CardTitle> 
+            <CardTitle>Aylık Genel Bakış</CardTitle> 
           </CardHeader>
           <CardContent>
             <MonthlyChart />
@@ -75,7 +73,7 @@ export function Overview() {
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>{t('overview.expensesByCategory')}</CardTitle> 
+            <CardTitle>Kategoriye Göre Giderler</CardTitle> 
           </CardHeader>
           <CardContent>
             <CategoryChart />
