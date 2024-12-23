@@ -59,22 +59,9 @@ const LangSelector = () => {
   };
 
   return (
-    <div className="flex justify-center items-center gap-4 mt-">
-      <div className="">
-        <select
-          value={selectedLang}
-          onChange={(e) => handleChangeLanguage(e.target.value)}
-          className="border border-gray-300 rounded px-3 py-1"
-        >
-          {languages.map(({ code, lang, country }) => (
-            <option key={code} value={code}>
-              <span className={`fi fi-${country} mr-2`} />
-              {lang}
-            </option>
-          ))}
-        </select>
-      </div>
-      {/* <Select value={selectedLang} onValueChange={handleChangeLanguage}>
+    <div className="flex justify-center items-center gap-4 mt-2">
+
+      <Select value={selectedLang} onValueChange={handleChangeLanguage}>
         <SelectTrigger className="w-[130px]">
           <SelectValue placeholder="Select Language" />
         </SelectTrigger>
@@ -85,7 +72,7 @@ const LangSelector = () => {
             </SelectItem>
           ))}
         </SelectContent>
-      </Select> */}
+      </Select>
     </div>
   );
 };
