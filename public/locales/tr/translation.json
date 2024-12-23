@@ -36,7 +36,7 @@
     "noTransactions": "Henüz işlem yok",
     "addTransaction": "İşlem Ekle",
     "selectCategory": "Kategori seç",
-    "transactionDetails": "İşlem Detayları"
+    "transactionDetails": "Islem Detaylari"
   },
   "additional": {
     "income": "Gelir",
@@ -45,6 +45,7 @@
     "overview": "Genel Bakış",
     "transactions": "İşlemler",
     "categories": "Kategoriler",
+    "description": "açiklama",
     "categoryManagement": "Kategori Yönetimi",
     "recentTransactions": "Son İşlemler",
     "addCategory": "Kategori Ekle",
@@ -56,8 +57,9 @@
     "dark": "Karanlık",
     "system": "Sistem",
     "deleteCategory": "Kategoriyi Sil",
-    "reportTitle": "Finansal İşlemler Raporu",
+    "reportTitle": "Finansal Islemler Raporu",
     "downloadButton": "PDF Raporunu İndir",
-    "reduceSpending": "{{categoryName}} kategorisinde harcamalarınızı azaltın, bu, ortalamanızın üzerinde."
+    "reduceSpending": "{{categoryName}} kategorisinde harcamalarınızı azaltın, bu, ortalamanızın üzerinde.",
+     "AllRightsReserved": "Tüm Hakları Saklıdır"
   }
 }

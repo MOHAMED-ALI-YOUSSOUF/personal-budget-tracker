@@ -20,6 +20,9 @@ export default function Dashboard() {
     <div className="flex min-h-screen flex-col">
       <div className="border-b">
         <div className="flex h-16 items-center px-4">
+        <h2 className="sm:text-3xl font-bold tracking-tight  mx-3 text-2xl">
+          {t('overview.title')}
+        </h2>
           <div className="ml-auto flex items-center space-x-4">
             <LangSelector/>
             <ModeToggle />
@@ -27,7 +30,7 @@ export default function Dashboard() {
         </div>
       </div>
       <div className="flex-1 space-y-4 p-8 pt-6">
-          <h2 className="text-3xl font-bold tracking-tight  sm:text-start text-center">{t('overview.title')}</h2>
+         
         <div className="flex items-center justify-between space-y-2  ">
         <TransactionReportButton/>   
           <AddTransaction />

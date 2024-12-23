@@ -1,23 +1,48 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+"use client";
+import React, { useEffect, useState } from "react";
+import "../i18n";
+import { useTranslation } from "react-i18next";
+import "flag-icons/css/flag-icons.min.css";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const languages = [
-  { code: 'en', lang: 'English', flag: '🇺🇸' },
-  { code: 'tr', lang: 'Türkçe', flag: '🇹🇷' },
+  {
+    code: "en",
+    lang: "English",
+    flag: "🇺🇸",
+    country: "us", // country Code for The flag
+  },
+  {
+    code: "tr",
+    lang: "Türkçe",
+    flag: "🇹🇷",
+    country: "tr",
+  },
 ];
 
 const LangSelector = () => {
   const { i18n } = useTranslation();
-  const [selectedLang, setSelectedLang] = useState(i18n.language);
+  const [selectedLang, setSelectedLang] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("lang") || i18n.language;
+    }
+    return i18n.language; // Fallback pour le serveur
+  });
 
-  // Synchronise la langue avec le stockage local
+  // Apply language stored in localStorage on first render
   useEffect(() => {
-    const storedLang = localStorage.getItem('lang') || i18n.language;
-    i18n.changeLanguage(storedLang).catch((error) =>
-      console.error('Erreur lors du changement de langue :', error)
-    );
+    const storedLang = localStorage.getItem("lang") || i18n.language;
+    if (storedLang !== i18n.language) {
+      i18n.changeLanguage(storedLang).catch((error) => {
+        console.error("Erreur lors du changement de langue :", error);
+      });
+    }
     setSelectedLang(storedLang);
   }, [i18n]);
 
@@ -25,27 +50,42 @@ const LangSelector = () => {
     i18n
       .changeLanguage(code)
       .then(() => {
-        localStorage.setItem('lang', code);
+        localStorage.setItem("lang", code);
         setSelectedLang(code);
       })
-      .catch((error) =>
-        console.error('Erreur lors du changement de langue :', error)
-      );
+      .catch((error) => {
+        console.error("Erreur lors du changement de langue :", error);
+      });
   };
 
   return (
-    <div className="flex justify-center items-center mt-2">
-      <select
-        value={selectedLang}
-        onChange={(e) => handleChangeLanguage(e.target.value)}
-        className="border border-gray-300 rounded px-3 py-1"
-      >
-        {languages.map(({ code, lang, flag }) => (
-          <option key={code} value={code}>
-            {flag} {lang}
-          </option>
-        ))}
-      </select>
+    <div className="flex justify-center items-center gap-4 mt-">
+      <div className="">
+        <select
+          value={selectedLang}
+          onChange={(e) => handleChangeLanguage(e.target.value)}
+          className="border border-gray-300 rounded px-3 py-1"
+        >
+          {languages.map(({ code, lang, country }) => (
+            <option key={code} value={code}>
+              <span className={`fi fi-${country} mr-2`} />
+              {lang}
+            </option>
+          ))}
+        </select>
+      </div>
+      {/* <Select value={selectedLang} onValueChange={handleChangeLanguage}>
+        <SelectTrigger className="w-[130px]">
+          <SelectValue placeholder="Select Language" />
+        </SelectTrigger>
+        <SelectContent>
+          {languages.map(({ code, lang, country }) => (
+            <SelectItem key={code} value={code}>
+              <span className={`fi fi-${country} mr-2`} /> {lang}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select> */}
     </div>
   );
 };

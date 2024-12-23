@@ -43,6 +43,7 @@
     "expenses": "Expenses",
     "overview": "Overview",
     "categories": "Categories",
+    "transactions": "Transactions",
     "categoryManagement": "Category Management",
     "recentTransactions": "Recent Transactions",
     "addCategory": "Add Category",
@@ -55,6 +56,9 @@
     "system": "System",
     "deleteCategory": "Delete Category",
     "downloadButton": "Download PDF Report",
-    "reduceSpending": "Reduce your spending in {{categoryName}}, it is above your usual average."
+    "reduceSpending": "Reduce your spending in {{categoryName}}, it is above your usual average.",
+   "AllRightsReserved": "All Rights Reserved"
+    
+    
   }
 }
