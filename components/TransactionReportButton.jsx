@@ -3,15 +3,12 @@ import { format } from "date-fns";
 import { Button } from "./ui/button";
 import { useBudget } from "@/contexts/BudgetContext";
 
-// Fonction pour générer le PDF
 export async function generatePDF(transactions, categories) {
   const doc = new jsPDF();
 
-  // Titre du rapport
   doc.setFontSize(22);
   doc.text("Finansal Islemler Raporu", 20, 20);
 
-  // Résumé
   const totalIncome = transactions
     .filter((t) => t.type === "income")
     .reduce((sum, t) => sum + t.amount, 0);
@@ -25,14 +22,12 @@ export async function generatePDF(transactions, categories) {
   doc.text(`Toplam Gider: TRY${totalExpenses.toFixed(2)}`, 20, 40);
   doc.text(`Bakiye: TRY${balance.toFixed(2)}`, 20, 50);
 
-  // Transactions
   doc.setFontSize(18);
   doc.text("Islem Detaylari", 20, 60);
   doc.setFontSize(11);
 
   let y = 70;
 
-  // Colonnes
   doc.setFont("helvetica", "bold");
   doc.text("Tarih", 20, y);
   doc.text("Tür", 50, y);
@@ -49,7 +44,11 @@ export async function generatePDF(transactions, categories) {
     }
 
     const category = categories.find((c) => c.id === transaction.category);
-    const categoryName = category ? t(`${category.name}`) : "Bilinmeyen";
+    const categoryName = category ? category.name : "Bilinmeyen";
+    if (index % 2 === 0) {
+      doc.setFillColor(240, 240, 240);
+      doc.rect(20, y - 8, 190, 10, "F");
+    }
 
     doc.setFont("helvetica", "normal");
     doc.text(format(new Date(transaction.date), "MMM d, yyyy"), 20, y);
@@ -64,7 +63,6 @@ export async function generatePDF(transactions, categories) {
   doc.save("Finansal_Islemler_Raporu.pdf");
 }
 
-// Composant de bouton pour déclencher la génération du PDF
 export function TransactionReportButton() {
   const { transactions, categories } = useBudget();
 
