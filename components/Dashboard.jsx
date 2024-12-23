@@ -10,7 +10,7 @@ import { AddTransaction } from '@/components/AddTransaction';
 import { ModeToggle } from '@/components/mode-toggle';
 import { TransactionReportButton } from './TransactionReportButton';
 import { useTranslation } from 'react-i18next';
-import LangSelector from './LangSelector';
+// import LangSelector from './LangSelector';
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('overview');
@@ -21,7 +21,7 @@ export default function Dashboard() {
       <div className="border-b">
         <div className="flex h-16 items-center px-4">
           <div className="ml-auto flex items-center space-x-4">
-            <LangSelector/>
+            {/* <LangSelector/> */}
             <ModeToggle />
           </div>
         </div>
