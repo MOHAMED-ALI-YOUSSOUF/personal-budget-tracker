@@ -19,7 +19,7 @@ Personal Budget Tracker is a web application designed to help users track their 
 
 ## Tech Stack
 
-- **Frontend:** Next.js, Tailwind CSS, Date-fns
+- **Frontend:** Next.js, Tailwind CSS, Shadcn, Date-fns
 - **Icons:** Lucide-react
 - **State Management:** Context API
 - **Data Storage:** Local Storage

@@ -14,7 +14,8 @@ const Footer = () => {
         >
           Mohamed Ali Youssouf
         </a>
-        <br /> Tüm hakkı saklıdır
+        <br /> 
+        Tüm hakkı saklıdır
         
       </span>
     </footer>
